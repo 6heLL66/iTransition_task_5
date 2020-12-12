@@ -1,0 +1,35 @@
+canvas {
+	width: 100%;
+	max-width: 500px;
+	border: 2px solid black;
+	margin-top: 50px;
+}
+.info {
+	font-size: 24px;
+	font-weight: 600;
+}
+@media screen and (max-width: 500px) {
+	.info {
+		font-size: 11px;
+	}
+}
+.team {
+	position: fixed;
+	top: 5px;
+	left: 10px;
+}
+.status {
+	position: fixed;
+	top: 30px;
+	left: 10px;
+}
+.score {
+	position: fixed;
+	top: 5px;
+	right: 10px;
+}
+.turn {
+	position: fixed;
+	top: 30px;
+	right: 10px;
+}
