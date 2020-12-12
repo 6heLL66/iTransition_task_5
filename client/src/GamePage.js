@@ -3,7 +3,7 @@ import openSocket from 'socket.io-client';
 import './GamePage.css'
 import './bootstrap.min.css'
 
-const socket = openSocket('http://localhost:5000')
+const socket = openSocket()
 
 
 class GamePage extends React.Component {
@@ -36,7 +36,6 @@ class GamePage extends React.Component {
 			this.setState({ state: data.state, turn: data.turn, status: data.status,
 			 				playersCount: data.playersCount, players: data.players, score: data.score,
 			 				team: data.players.x ===  localStorage.getItem("id") ? "x" : "o" , modal: "modal fade", winner: "no"})
-			console.log(this.state)
 			let win = this.checkWin()
 			if (win) this.showWin(win)
 		})
@@ -173,7 +172,6 @@ class GameBoard extends React.Component {
 				else if (e[j] == "o") this.drawZero(j, i)
 			}
 		})
-		console.log(this.props.state)
 	}
 	
 	
@@ -181,7 +179,6 @@ class GameBoard extends React.Component {
 		const size = this.state.canvas.offsetWidth
 		let x = e.clientX - e.target.offsetLeft
 		let y = e.clientY - e.target.offsetTop
-		console.log(x, y)
 		if (x >= 0 && x <= size / 3) x = 0
 		else if (x > size / 3 && x <= 2 * size / 3) x = 1
 		else x = 2
